@@ -29,7 +29,7 @@ function reducer(state: PostsState = INITIAL_STATE, action: PayloadAction) {
       return {
         ...state,
         loading: false,
-        data: action.payload,
+        data: action.payload || [],
       };
     case LOAD_POSTS_FAILED:
       return {

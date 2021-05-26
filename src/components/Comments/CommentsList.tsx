@@ -8,8 +8,10 @@ type Props = {
 };
 
 function PostList(props: Props) {
+  if (props.loading) return <span>Loading comments...</span>;
+
   return (
-    <div className="comments-list">
+    <div className="comments-list" data-testid="comments-list">
       {props.data.map((comment) => (
         <div
           key={comment.id + ''}

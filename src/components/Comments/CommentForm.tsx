@@ -54,6 +54,7 @@ function CommentForm(props: Props) {
       <input
         className="comment-form-submit"
         type="submit"
+        data-testid="commentSubmitButton"
         value="Comment"
       />
     </form>

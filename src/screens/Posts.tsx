@@ -8,7 +8,7 @@ import PostList from '../components/Posts/PostList';
 function Posts(props: RouteComponentProps) {
   const dispatch = useDispatch();
   const posts = useSelector((state: RootState) => state.posts);
-
+  
   useEffect(() => {
     dispatch(loadPosts());
   }, []);
