@@ -25,7 +25,7 @@ const Posts: Array<Post> = [
 ];
 
 describe('PostList', () => {
-  it('Should render a list of posts', async () => {
+  it(`Should render a list of ${Posts.length} posts`, async () => {
     const handlePostClick = jest.fn();
     const { findByTestId } = render(
       <PostList
