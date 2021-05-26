@@ -6,6 +6,29 @@
   flex: auto;
   background-color: white;
   padding: 20px;
-  cursor: pointer;
   border-bottom: solid 1px #bebebe;
+}
+
+.comment-author-email {
+  font-size: 15px;
+  font-weight: normal;
+}
+
+.comment-form {
+  flex: auto;
+  padding: 15px;
+}
+
+.comment-form-input {
+  width: 100%;
+  flex: auto;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.comment-form-submit {
+  padding: 10px;
+  background-color: #58a6ff;
+  border: none;
+  color: white;
 }

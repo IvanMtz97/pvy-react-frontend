@@ -1,12 +1,14 @@
+import { Dispatch } from 'redux';
 import {
   LOAD_POSTS_FAILED,
   LOAD_POSTS_REQUESTED,
   LOAD_POSTS_SUCCEEDED,
 } from './types';
+import { PayloadAction } from '../types/redux';
 import { getPosts } from '../services/posts';
 
 export function loadPosts() {
-  return async (dispatch: any) => {
+  return async (dispatch: Dispatch<PayloadAction>) => {
     dispatch({ type: LOAD_POSTS_REQUESTED });
 
     try {
@@ -24,5 +26,3 @@ export function loadPosts() {
     }
   };
 }
-
-// TODO - Check dispatch any

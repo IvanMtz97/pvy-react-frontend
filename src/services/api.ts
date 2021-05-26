@@ -8,3 +8,16 @@ export async function get(endpoint: string): Promise<any> {
 
   return response.json();
 }
+
+export async function post(endpoint: string, data: any): Promise<any> {
+  const URL = `${API_URL}/${endpoint}`;
+  const response = await fetch(URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data || { }),
+  });
+
+  return response.json();
+}

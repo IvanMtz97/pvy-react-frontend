@@ -21,7 +21,7 @@ function PostList(props: Props) {
             }
           }}
         >
-          <h3>{comment.name}</h3>
+          <h3>{comment.name} - <span className="comment-author-email">{comment.email}</span></h3>
           <p>{comment.body}</p>
         </div>
       ))}

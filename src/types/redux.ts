@@ -1,4 +1,7 @@
 export type PayloadAction = {
   type: string,
-  payload: any,
+  payload?: any,
 };
+export type PayloadActionCreator = {
+  
+}

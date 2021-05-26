@@ -3,6 +3,9 @@ import {
   LOAD_COMMENTS_FAILED,
   LOAD_COMMENTS_REQUESTED,
   LOAD_COMMENTS_SUCCEEDED,
+  CREATE_COMMENTS_FAILED,
+  CREATE_COMMENTS_REQUESTED,
+  CREATE_COMMENTS_SUCCEEDED,
 } from '../actions/types';
 import { PayloadAction } from '../types/redux';
 
@@ -28,14 +31,33 @@ function reducer(state: CommentsState = INITIAL_STATE, action: PayloadAction) {
     case LOAD_COMMENTS_SUCCEEDED:
       return {
         ...state,
-        loading: false,
         data: action.payload,
+        error: '',
+        loading: false,
       };
     case LOAD_COMMENTS_FAILED:
       return {
         ...state,
-        loading: false,
         error: action.payload,
+        loading: false,
+      };
+    case CREATE_COMMENTS_REQUESTED:
+      return {
+        ...state,
+        loading: true,
+      };
+    case CREATE_COMMENTS_SUCCEEDED:
+      return {
+        ...state,
+        data: [...state.data, action.payload],
+        error: '',
+        loading: false,
+      };
+    case CREATE_COMMENTS_FAILED:
+      return {
+        ...state,
+        error: action.payload,
+        loading: false,
       };
     default:
       return state;
