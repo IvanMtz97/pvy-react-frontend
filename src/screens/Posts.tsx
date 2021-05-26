@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadPosts } from '../actions/posts';
 import { RootState } from '../reducers';
 import PostList from '../components/Posts/PostList';
 
-function Posts() {
+function Posts(props: RouteComponentProps) {
   const dispatch = useDispatch();
   const posts = useSelector((state: RootState) => state.posts);
 
@@ -13,7 +14,7 @@ function Posts() {
   }, []);
 
   function handlePostClick(postId: number) {
-    console.log('HANDLE POST ID', postId);
+    props.history.push('/comments/' + postId);
   }
 
   return (

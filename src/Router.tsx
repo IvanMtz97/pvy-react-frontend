@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import Posts from './screens/Posts';
 import Comments from './screens/Comments';
@@ -14,7 +13,7 @@ function Router() {
         />
         <Route
           exact
-          path="/comments"
+          path="/comments/:id"
           component={Comments}
         />
         <Redirect from="/" to="/posts" />

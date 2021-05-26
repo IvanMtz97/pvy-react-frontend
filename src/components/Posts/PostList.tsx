@@ -8,14 +8,13 @@ type Props = {
 };
 
 function PostList(props: Props) {
-  console.log('PROPS', props);
-  
   return (
     <div className="posts-list">
       {props.data.map((post) => (
         <div
           key={post.id + ''}
           className="post-card"
+          data-testid={`post/${post.id}`}
           onClick={() => props.onPostClick(post.id)}
         >
           <h3>{post.title}</h3>

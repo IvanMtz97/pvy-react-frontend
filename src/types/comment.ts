@@ -1,6 +1,6 @@
 type Comment = {
-  postId: Number,
-  id: Number,
+  postId: number,
+  id: number,
   name: string,
   email: string,
   body: string,
