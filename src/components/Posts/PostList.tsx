@@ -8,8 +8,12 @@ type Props = {
 };
 
 function PostList(props: Props) {
+  if (props.loading) {
+    return <span>Loading posts...</span>;
+  }
+
   return (
-    <div className="posts-list">
+    <div className="posts-list" data-testid="posts-list">
       {props.data.map((post) => (
         <div
           key={post.id + ''}
