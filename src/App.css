@@ -1,3 +1,4 @@
-.App {
-  display: 'flex',
+.App > * {
+  display: flex;
+  flex-direction: column;
 }
