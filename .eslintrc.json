@@ -1,0 +1,42 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint"
+    ],
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "extensions": [".js", ".jsx", ".ts", ".tsx"]
+        }
+      }
+    },
+    "rules": {
+        "react/jsx-filename-extension": [2, { "extensions": [".tsx"] }],
+        "react/react-in-jsx-scope": "off",
+        "import/extensions": "off",
+        "react/destructuring-assignment": "off",
+        "no-use-before-define": "off",
+        "import/prefer-default-export": "off",
+        "no-unused-vars": "off",
+        "jsx-a11y/click-events-have-key-events": "off",
+        "jsx-a11y/interactive-supports-focus": "off",
+        "prefer-template": "off",
+        "react/jsx-one-expression-per-line": "off"
+    }
+}

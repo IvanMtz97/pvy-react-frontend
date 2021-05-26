@@ -8,13 +8,13 @@ import PostList from '../components/Posts/PostList';
 function Posts(props: RouteComponentProps) {
   const dispatch = useDispatch();
   const posts = useSelector((state: RootState) => state.posts);
-  
+
   useEffect(() => {
     dispatch(loadPosts());
   }, []);
 
   function handlePostClick(postId: number) {
-    props.history.push('/comments/' + postId);
+    props.history.push(`/comments/${postId}`);
   }
 
   return (

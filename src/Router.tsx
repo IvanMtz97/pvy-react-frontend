@@ -1,4 +1,9 @@
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import {
+  BrowserRouter,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom';
 import Posts from './screens/Posts';
 import Comments from './screens/Comments';
 

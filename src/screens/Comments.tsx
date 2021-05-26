@@ -17,10 +17,9 @@ function Comments(props: RouteComponentProps<RouteParams>) {
 
   useEffect(() => {
     dispatch(loadComments(Number(props.match.params.id)));
-  }, [])
+  }, []);
 
   function handleOnCommentSubmit(comment: Comment) {
-    console.log('COMMENT CREATE', comment);
     dispatch(createComment(comment));
   }
 

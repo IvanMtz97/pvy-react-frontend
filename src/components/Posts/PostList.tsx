@@ -16,10 +16,11 @@ function PostList(props: Props) {
     <div className="posts-list" data-testid="posts-list">
       {props.data.map((post) => (
         <div
-          key={post.id + ''}
+          key={`${post.id}`}
           className="post-card"
           data-testid={`post/${post.id}`}
           onClick={() => props.onPostClick(post.id)}
+          role="button"
         >
           <h3>{post.title}</h3>
           <p>{post.body}</p>

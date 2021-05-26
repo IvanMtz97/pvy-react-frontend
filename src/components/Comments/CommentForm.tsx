@@ -5,7 +5,7 @@ import './index.css';
 type Props = {
   postId: number,
   onSubmit: (comment: Comment) => void,
-}
+};
 
 function CommentForm(props: Props) {
   const [bodyInputText, setBodyInputText] = useState('');
@@ -23,13 +23,25 @@ function CommentForm(props: Props) {
     });
   }
 
+  function handleNameInputChange(event: React.ChangeEvent<HTMLInputElement>) {
+    setNameInputText(event.target.value);
+  }
+
+  function handleEmailInputChange(event: React.ChangeEvent<HTMLInputElement>) {
+    setEmailInputText(event.target.value);
+  }
+
+  function handleBodyInputChange(event: React.ChangeEvent<HTMLTextAreaElement>) {
+    setBodyInputText(event.target.value);
+  }
+
   return (
     <form onSubmit={handleSubmit} className="comment-form">
       <input
         className="comment-form-input"
         data-testid="nameInput"
         id="nameInput"
-        onChange={(event: React.ChangeEvent<HTMLInputElement>) => setNameInputText(event.target.value)}
+        onChange={handleNameInputChange}
         placeholder="Name"
         type="text"
         value={nameInputText}
@@ -38,7 +50,7 @@ function CommentForm(props: Props) {
         className="comment-form-input"
         data-testid="emailInput"
         id="emailInput"
-        onChange={(event: React.ChangeEvent<HTMLInputElement>) => setEmailInputText(event.target.value)}
+        onChange={handleEmailInputChange}
         placeholder="Email"
         type="text"
         value={emailInputText}
@@ -47,7 +59,7 @@ function CommentForm(props: Props) {
         className="comment-form-input"
         data-testid="bodyInput"
         id="bodyInput"
-        onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) => setBodyInputText(event.target.value)}
+        onChange={handleBodyInputChange}
         placeholder="Comment"
         value={bodyInputText}
       />
@@ -58,7 +70,7 @@ function CommentForm(props: Props) {
         value="Comment"
       />
     </form>
-  )
+  );
 }
 
 export default CommentForm;

@@ -47,18 +47,4 @@ describe('<CommentsList />', () => {
     );
     expect(await findByText('Loading comments...')).toBeInTheDocument();
   });
-  it('Should call onCommentClick when clicking a comment', async () => {
-    const handleCommentClick = jest.fn();
-    const commentId = 2;
-    const { findByTestId } = render(
-      <CommentsList
-        data={Comments}
-        loading={false}
-        onCommentClick={handleCommentClick}
-      />
-    );
-
-    fireEvent.click(await findByTestId(`comment/${commentId}`));
-    expect(handleCommentClick).toHaveBeenCalledWith(commentId);
-  });
 });
