@@ -31,7 +31,7 @@ function reducer(state: CommentsState = INITIAL_STATE, action: PayloadAction) {
     case LOAD_COMMENTS_SUCCEEDED:
       return {
         ...state,
-        data: action.payload,
+        data: action.payload || [],
         error: '',
         loading: false,
       };

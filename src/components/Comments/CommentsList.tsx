@@ -11,7 +11,7 @@ function PostList(props: Props) {
     <div className="comments-list" data-testid="comments-list">
       {props.data.map((comment) => (
         <div
-          key={comment.id + ''}
+          key={`${comment.id}`}
           className="comment-card"
           data-testid={`comment/${comment.id}`}
         >
